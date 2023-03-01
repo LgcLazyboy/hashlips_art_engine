@@ -1,13 +1,41 @@
+
+// ******************************************** //
+// ******* ↓↓↓↓↓ 사용자 설정 영역 ↓↓↓↓↓ ******* //
+// ******************************************** //
+
+const EDITION_SIZE = 100;
+const LAYERS_ORDER = [
+  { name: "1.Drink" },
+  { name: "2.Plate" },
+  { name: "3.Bun" },
+  { name: "4.Patty" },
+  { name: "5.Extra" },
+  { name: "6.Vegetable" },
+  { name: "7.Base Patty" },
+  { name: "8.Flag" },
+  { name: "9.Side" },
+];
+
+const NAME_PREFIX = "Your Collection";
+const DESCRIPTION = "Remember to replace this description";
+const BASE_URI = "ipfs://NewUriToReplace";
+
+const BACKGROUND = {
+  generate: true,
+  brightness: "80%",
+  static: false,
+  default: "#000000",
+};
+
+// ******************************************** //
+// ******* ↑↑↑↑↑ 사용자 설정 영역 ⬆⬆⬆⬆⬆ ******* //
+// ******************************************** //
+
 const basePath = process.cwd();
 const { MODE } = require(`${basePath}/constants/blend_mode.js`);
 const { NETWORK } = require(`${basePath}/constants/network.js`);
 
 const network = NETWORK.eth;
-
-// General metadata for Ethereum
-const namePrefix = "Your Collection";
-const description = "Remember to replace this description";
-const baseUri = "ipfs://NewUriToReplace";
 
 const solanaMetadata = {
   symbol: "YC",
@@ -24,16 +52,8 @@ const solanaMetadata = {
 // If you have selected Solana then the collection starts from 0 automatically
 const layerConfigurations = [
   {
-    growEditionSizeTo: 5,
-    layersOrder: [
-      { name: "Background" },
-      { name: "Eyeball" },
-      { name: "Eye color" },
-      { name: "Iris" },
-      { name: "Shine" },
-      { name: "Bottom lid" },
-      { name: "Top lid" },
-    ],
+    growEditionSizeTo: EDITION_SIZE,
+    layersOrder: LAYERS_ORDER,
   },
 ];
 
@@ -71,13 +91,6 @@ const pixelFormat = {
   ratio: 2 / 128,
 };
 
-const background = {
-  generate: true,
-  brightness: "80%",
-  static: false,
-  default: "#000000",
-};
-
 const extraMetadata = {};
 
 const rarityDelimiter = "#";
@@ -102,9 +115,9 @@ const preview_gif = {
 
 module.exports = {
   format,
-  baseUri,
-  description,
-  background,
+  baseUri: BASE_URI,
+  description: DESCRIPTION,
+  background: BACKGROUND,
   uniqueDnaTorrance,
   layerConfigurations,
   rarityDelimiter,
@@ -114,7 +127,7 @@ module.exports = {
   extraMetadata,
   pixelFormat,
   text,
-  namePrefix,
+  namePrefix: NAME_PREFIX,
   network,
   solanaMetadata,
   gif,
