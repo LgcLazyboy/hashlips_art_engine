@@ -2,7 +2,7 @@ import { NFTStorage } from 'nft.storage'
 import { filesFromPath } from 'files-from-path'
 import path from 'path'
 
-const API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDA1QWI2YjRmOThEYzlFYjRhQjc4MTc2MTBGZjVCNjdDRTZmMjQzN0IiLCJpc3MiOiJuZnQtc3RvcmFnZSIsImlhdCI6MTY3NzIyMzU0NzQwNywibmFtZSI6Im15Zmlyc3RuZnQifQ.bJpWo3QTroeV7ZieBxlvB30NA1O0KadkFSkr9x6v3FQ'
+const API_KEY = '여기에 API KEY를 입력'
 
 async function main() {
   // you'll probably want more sophisticated argument parsing in a real app

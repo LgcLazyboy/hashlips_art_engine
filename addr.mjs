@@ -1,6 +1,6 @@
 import fs from 'fs';
 const FILE_COUNT = 100;
-const IPFS_BASE = "ipfs://bafybeigcigva72sybf672nj5l6nk53frn6b3l57go4sf3peqt5vptcf56m";
+const IPFS_BASE = "여기에 IPFS 주소를 넣으세요";
 
 for (let i = 1; i <= FILE_COUNT; i++) {
   const fileName = `build/json/${i}.json`;
